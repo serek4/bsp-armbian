@@ -1,6 +1,6 @@
-From 565de129970318c33a828e485dfcb9ef6c708df5 Mon Sep 17 00:00:00 2001
+From 31d7f7f809a48dd4f8c4d747601ce1d025ac3f6e Mon Sep 17 00:00:00 2001
 From: serek4 <jacezarem@gmail.com>
-Date: Sat, 31 Oct 2026 21:11:38 +0100
+Date: Sun, 1 Nov 2026 13:43:38 +0100
 Subject: [PATCH] Added tbe101 support
 
 ---
@@ -40,10 +40,10 @@ Subject: [PATCH] Added tbe101 support
  create mode 100644 include/configs/tbe101.h
 
 diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 3db5474a05b..855597f05fa 100644
+index cd6a454fd60..fe53fa6155a 100644
 --- a/arch/arm/Kconfig
 +++ b/arch/arm/Kconfig
-@@ -1618,6 +1618,17 @@ config TARGET_LS1012AQDS
+@@ -1613,6 +1613,17 @@ config TARGET_LS1012AQDS
  	  development platform that supports the QorIQ LS1012A
  	  Layerscape Architecture processor.
  
@@ -61,10 +61,10 @@ index 3db5474a05b..855597f05fa 100644
  config TARGET_LS1012ARDB
  	bool "Support ls1012ardb"
  	select ARCH_LS1012A
-@@ -2439,6 +2450,7 @@ source "board/freescale/ls1012aqds/Kconfig"
- source "board/freescale/ls1012ardb/Kconfig"
- source "board/freescale/ls1012afrdm/Kconfig"
- source "board/freescale/lx2160a/Kconfig"
+@@ -2432,6 +2443,7 @@ source "board/nxp/ls1012aqds/Kconfig"
+ source "board/nxp/ls1012ardb/Kconfig"
+ source "board/nxp/ls1012afrdm/Kconfig"
+ source "board/nxp/lx2160a/Kconfig"
 +source "board/scalys/tbe101/Kconfig"
  source "board/grinn/chiliboard/Kconfig"
  source "board/hisilicon/hikey/Kconfig"
@@ -94,10 +94,10 @@ index c0e5455507a..d88ada54951 100644
  	{0x2305, {SGMII_2500_FM1_DTSEC1, SGMII_FM1_DTSEC2, NONE, PCIE1} },
  	{0x9508, {TX_CLK, PCIE1, NONE, SATA1} },
 diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index fcad6fb2fc7..5bea2759555 100644
+index 82ad3035308..55e6599d342 100644
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -532,6 +532,8 @@ dtb-$(CONFIG_TARGET_SL28) += fsl-ls1028a-kontron-sl28.dtb \
+@@ -533,6 +533,8 @@ dtb-$(CONFIG_TARGET_SL28) += fsl-ls1028a-kontron-sl28.dtb \
  	fsl-ls1028a-kontron-sl28-var3.dtb \
  	fsl-ls1028a-kontron-sl28-var4.dtb \
  
@@ -206,11 +206,11 @@ index 00000000000..a921022455d
 +};
 diff --git a/board/scalys/common b/board/scalys/common
 new file mode 120000
-index 00000000000..75060789860
+index 00000000000..cc9b7a8a5e3
 --- /dev/null
 +++ b/board/scalys/common
 @@ -0,0 +1 @@
-+../freescale/common
++../nxp/common/
 \ No newline at end of file
 diff --git a/board/scalys/tbe101/Kconfig b/board/scalys/tbe101/Kconfig
 new file mode 100644
