@@ -1,4 +1,4 @@
-From 31d7f7f809a48dd4f8c4d747601ce1d025ac3f6e Mon Sep 17 00:00:00 2001
+From 930f594b3ab2400954b657da746b39edc6bf0b87 Mon Sep 17 00:00:00 2001
 From: serek4 <jacezarem@gmail.com>
 Date: Sun, 1 Nov 2026 13:43:38 +0100
 Subject: [PATCH] Added tbe101 support
@@ -40,10 +40,10 @@ Subject: [PATCH] Added tbe101 support
  create mode 100644 include/configs/tbe101.h
 
 diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index cd6a454fd60..fe53fa6155a 100644
+index 1b474a346bf..1d41d2f8cf3 100644
 --- a/arch/arm/Kconfig
 +++ b/arch/arm/Kconfig
-@@ -1613,6 +1613,17 @@ config TARGET_LS1012AQDS
+@@ -1628,6 +1628,17 @@ config TARGET_LS1012AQDS
  	  development platform that supports the QorIQ LS1012A
  	  Layerscape Architecture processor.
  
@@ -61,7 +61,7 @@ index cd6a454fd60..fe53fa6155a 100644
  config TARGET_LS1012ARDB
  	bool "Support ls1012ardb"
  	select ARCH_LS1012A
-@@ -2432,6 +2443,7 @@ source "board/nxp/ls1012aqds/Kconfig"
+@@ -2455,6 +2466,7 @@ source "board/nxp/ls1012aqds/Kconfig"
  source "board/nxp/ls1012ardb/Kconfig"
  source "board/nxp/ls1012afrdm/Kconfig"
  source "board/nxp/lx2160a/Kconfig"
@@ -70,7 +70,7 @@ index cd6a454fd60..fe53fa6155a 100644
  source "board/hisilicon/hikey/Kconfig"
  source "board/hisilicon/hikey960/Kconfig"
 diff --git a/arch/arm/cpu/armv8/Kconfig b/arch/arm/cpu/armv8/Kconfig
-index dfc4ce851c3..058a1a5e22a 100644
+index 7e4e3bdd66c..e0f3e9997be 100644
 --- a/arch/arm/cpu/armv8/Kconfig
 +++ b/arch/arm/cpu/armv8/Kconfig
 @@ -136,6 +136,7 @@ config PSCI_RESET
@@ -94,10 +94,10 @@ index c0e5455507a..d88ada54951 100644
  	{0x2305, {SGMII_2500_FM1_DTSEC1, SGMII_FM1_DTSEC2, NONE, PCIE1} },
  	{0x9508, {TX_CLK, PCIE1, NONE, SATA1} },
 diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index 82ad3035308..55e6599d342 100644
+index 37d3b6fd3cc..0fdc3f374f5 100644
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -533,6 +533,8 @@ dtb-$(CONFIG_TARGET_SL28) += fsl-ls1028a-kontron-sl28.dtb \
+@@ -501,6 +501,8 @@ dtb-$(CONFIG_TARGET_SL28) += fsl-ls1028a-kontron-sl28.dtb \
  	fsl-ls1028a-kontron-sl28-var3.dtb \
  	fsl-ls1028a-kontron-sl28-var4.dtb \
  
@@ -1479,10 +1479,10 @@ index 00000000000..4d94a6d2336
 +CONFIG_USB_XHCI_HCD=y
 +CONFIG_USB_XHCI_DWC3=y
 diff --git a/drivers/mtd/spi/spi-nor-ids.c b/drivers/mtd/spi/spi-nor-ids.c
-index b6a07fa9063..58958b8b919 100644
+index 31a2ba49a87..68de11252f3 100644
 --- a/drivers/mtd/spi/spi-nor-ids.c
 +++ b/drivers/mtd/spi/spi-nor-ids.c
-@@ -346,6 +346,9 @@ const struct flash_info spi_nor_ids[] = {
+@@ -421,6 +421,9 @@ const struct flash_info spi_nor_ids[] = {
  	{ INFO6("mt25qu512a",  0x20bb20, 0x104400, 64 * 1024, 1024,
  		 SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ | SPI_NOR_4B_OPCODES |
  		 USE_FSR) },
@@ -1492,7 +1492,7 @@ index b6a07fa9063..58958b8b919 100644
  	{ INFO("n25q512a",    0x20bb20, 0, 64 * 1024, 1024, SECT_4K | USE_FSR | SPI_NOR_QUAD_READ) },
  	{ INFO6("mt25ql512a",  0x20ba20, 0x104400, 64 * 1024, 1024, SECT_4K | USE_FSR | SPI_NOR_QUAD_READ | SPI_NOR_4B_OPCODES) },
  	{ INFO("n25q512ax3",  0x20ba20, 0, 64 * 1024, 1024, SECT_4K | USE_FSR | SPI_NOR_QUAD_READ) },
-@@ -446,6 +449,8 @@ const struct flash_info spi_nor_ids[] = {
+@@ -521,6 +524,8 @@ const struct flash_info spi_nor_ids[] = {
  	{ INFO("sst26wf016",  0xbf2651, 0, 64 * 1024,  32, SECT_4K | SPI_NOR_HAS_SST26LOCK) },
  	{ INFO("sst26wf032",  0xbf2622, 0, 64 * 1024,  64, SECT_4K | SPI_NOR_HAS_SST26LOCK) },
  	{ INFO("sst26wf064",  0xbf2643, 0, 64 * 1024, 128, SECT_4K | SPI_NOR_HAS_SST26LOCK) },
