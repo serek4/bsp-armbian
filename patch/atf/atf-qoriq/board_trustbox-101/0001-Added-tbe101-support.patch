@@ -1,7 +1,7 @@
-From 9d07637272c89097a49517694e4d009e5f096b5a Mon Sep 17 00:00:00 2001
+From c27b19704dad634aa2b107ad90c3582471368af6 Mon Sep 17 00:00:00 2001
 From: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
 Date: Thu, 24 Oct 2024 09:03:16 +0300
-Subject: [PATCH] Added tbe101 support
+Subject: [PATCH 1/2] Added tbe101 support
 
 ---
  plat/nxp/soc-ls1012a/tbe101/ddr_init.c     | 34 +++++++++
@@ -216,5 +216,5 @@ index 000000000..a782d01c7
 +
 +#endif /* POLICY_H */
 -- 
-2.34.1
+2.56.0
 

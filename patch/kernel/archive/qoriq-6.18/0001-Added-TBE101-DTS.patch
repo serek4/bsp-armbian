@@ -1,4 +1,4 @@
-From 223102de8884d6f3fae26217fc4cc9e717652c64 Mon Sep 17 00:00:00 2001
+From e713741bc1165ba540602303e78ecda366b8d0d9 Mon Sep 17 00:00:00 2001
 From: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
 Date: Tue, 12 Nov 2024 16:10:11 +0200
 Subject: [PATCH] Added TBE101 DTS
@@ -11,10 +11,10 @@ Subject: [PATCH] Added TBE101 DTS
  create mode 100644 arch/arm64/boot/dts/freescale/tbe101.dts
 
 diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-index 0bf63f8fff03..e9a6fee1ace2 100644
+index 1eba413cbd5e..59ea0ca60cae 100644
 --- a/arch/arm64/boot/dts/freescale/Makefile
 +++ b/arch/arm64/boot/dts/freescale/Makefile
-@@ -70,6 +70,7 @@ DTC_FLAGS_fsl-lx2162a-clearfog := -Wno-interrupt_map
+@@ -72,6 +72,7 @@ DTC_FLAGS_fsl-lx2162a-clearfog := -Wno-interrupt_map
  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2162a-clearfog.dtb
  DTC_FLAGS_fsl-lx2162a-qds := -Wno-interrupt_map
  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2162a-qds.dtb
