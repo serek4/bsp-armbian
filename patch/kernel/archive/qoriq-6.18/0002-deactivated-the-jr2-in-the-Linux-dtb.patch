@@ -1,0 +1,34 @@
+From 0cdc4a1f1ade04b023da328adc6cd81df10c2a73 Mon Sep 17 00:00:00 2001
+From: serek4 <jacezarem@gmail.com>
+Date: Sun, 1 Nov 2026 01:53:31 +0100
+Subject: [PATCH 2/2] deactivated the jr2 in the Linux dtb
+
+patch for boot error:
+caam_jr 1730000.jr: failed to flush job ring 2
+caam_jr 1730000.jr: probe with driver caam_jr failed with error -5
+
+https://community.nxp.com/t5/Layerscape/caam-jr-1-job-ring-failed-flush-the-others-are-fine/m-p/2161996
+---
+ arch/arm64/boot/dts/freescale/fsl-ls1012a.dtsi | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1012a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1012a.dtsi
+index c32ae4b84f59..ce09bbc5478c 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1012a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1012a.dtsi
+@@ -216,11 +216,7 @@ sec_jr1: jr@20000 {
+ 			};
+ 
+ 			sec_jr2: jr@30000 {
+-				compatible = "fsl,sec-v5.4-job-ring",
+-					     "fsl,sec-v5.0-job-ring",
+-					     "fsl,sec-v4.0-job-ring";
+-				reg = <0x30000 0x10000>;
+-				interrupts = <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
+ 			};
+ 
+ 			sec_jr3: jr@40000 {
+-- 
+2.56.0
+

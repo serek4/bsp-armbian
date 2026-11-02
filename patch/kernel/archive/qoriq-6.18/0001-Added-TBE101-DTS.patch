@@ -1,7 +1,7 @@
 From e713741bc1165ba540602303e78ecda366b8d0d9 Mon Sep 17 00:00:00 2001
 From: Siarhei Yasinski <siarhei.yasinski@sintecs.eu>
 Date: Tue, 12 Nov 2024 16:10:11 +0200
-Subject: [PATCH] Added TBE101 DTS
+Subject: [PATCH 1/2] Added TBE101 DTS
 
 ---
  arch/arm64/boot/dts/freescale/Makefile   |   1 +
