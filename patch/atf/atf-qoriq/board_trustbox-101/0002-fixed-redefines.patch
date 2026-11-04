@@ -1,0 +1,176 @@
+From d183f15833343438e4ad0f3c62e1d98e15481611 Mon Sep 17 00:00:00 2001
+From: serek4 <jacezarem@gmail.com>
+Date: Mon, 2 Nov 2026 20:57:03 +0100
+Subject: [PATCH 2/2] fixed redefines
+
+---
+ include/lib/cpus/aarch32/cortex_a53.h | 14 ++++++++++++++
+ include/lib/cpus/aarch32/cortex_a57.h | 14 ++++++++++++++
+ include/lib/cpus/aarch64/cortex_a35.h | 14 ++++++++++++++
+ include/lib/cpus/aarch64/cortex_a53.h | 14 ++++++++++++++
+ include/lib/cpus/aarch64/cortex_a57.h | 14 ++++++++++++++
+ 5 files changed, 70 insertions(+)
+
+diff --git a/include/lib/cpus/aarch32/cortex_a53.h b/include/lib/cpus/aarch32/cortex_a53.h
+index b9bb3109b..cbd4e9107 100644
+--- a/include/lib/cpus/aarch32/cortex_a53.h
++++ b/include/lib/cpus/aarch32/cortex_a53.h
+@@ -13,13 +13,27 @@
+ #define CORTEX_A53_MIDR			U(0x410FD030)
+ 
+ /* Retention timer tick definitions */
++#ifndef RETENTION_ENTRY_TICKS_2
+ #define RETENTION_ENTRY_TICKS_2		U(0x1)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_8
+ #define RETENTION_ENTRY_TICKS_8		U(0x2)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_32
+ #define RETENTION_ENTRY_TICKS_32	U(0x3)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_64
+ #define RETENTION_ENTRY_TICKS_64	U(0x4)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_128
+ #define RETENTION_ENTRY_TICKS_128	U(0x5)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_256
+ #define RETENTION_ENTRY_TICKS_256	U(0x6)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_512
+ #define RETENTION_ENTRY_TICKS_512	U(0x7)
++#endif
+ 
+ /*******************************************************************************
+  * CPU Extended Control register specific definitions.
+diff --git a/include/lib/cpus/aarch32/cortex_a57.h b/include/lib/cpus/aarch32/cortex_a57.h
+index bb977ffad..fa448fb76 100644
+--- a/include/lib/cpus/aarch32/cortex_a57.h
++++ b/include/lib/cpus/aarch32/cortex_a57.h
+@@ -13,13 +13,27 @@
+ #define CORTEX_A57_MIDR			U(0x410FD070)
+ 
+ /* Retention timer tick definitions */
++#ifndef RETENTION_ENTRY_TICKS_2
+ #define RETENTION_ENTRY_TICKS_2		U(0x1)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_8
+ #define RETENTION_ENTRY_TICKS_8		U(0x2)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_32
+ #define RETENTION_ENTRY_TICKS_32	U(0x3)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_64
+ #define RETENTION_ENTRY_TICKS_64	U(0x4)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_128
+ #define RETENTION_ENTRY_TICKS_128	U(0x5)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_256
+ #define RETENTION_ENTRY_TICKS_256	U(0x6)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_512
+ #define RETENTION_ENTRY_TICKS_512	U(0x7)
++#endif
+ 
+ /*******************************************************************************
+  * CPU Extended Control register specific definitions.
+diff --git a/include/lib/cpus/aarch64/cortex_a35.h b/include/lib/cpus/aarch64/cortex_a35.h
+index 99fc28005..c49099bc4 100644
+--- a/include/lib/cpus/aarch64/cortex_a35.h
++++ b/include/lib/cpus/aarch64/cortex_a35.h
+@@ -16,13 +16,27 @@
+ #define CORTEX_A35_L2ECTLR_EL1			S3_1_C11_C0_3
+ 
+ /* Retention timer tick definitions */
++#ifndef RETENTION_ENTRY_TICKS_2
+ #define RETENTION_ENTRY_TICKS_2		0x1
++#endif
++#ifndef RETENTION_ENTRY_TICKS_8
+ #define RETENTION_ENTRY_TICKS_8		0x2
++#endif
++#ifndef RETENTION_ENTRY_TICKS_32
+ #define RETENTION_ENTRY_TICKS_32	0x3
++#endif
++#ifndef RETENTION_ENTRY_TICKS_64
+ #define RETENTION_ENTRY_TICKS_64	0x4
++#endif
++#ifndef RETENTION_ENTRY_TICKS_128
+ #define RETENTION_ENTRY_TICKS_128	0x5
++#endif
++#ifndef RETENTION_ENTRY_TICKS_256
+ #define RETENTION_ENTRY_TICKS_256	0x6
++#endif
++#ifndef RETENTION_ENTRY_TICKS_512
+ #define RETENTION_ENTRY_TICKS_512	0x7
++#endif
+ 
+ /*******************************************************************************
+  * CPU Extended Control register specific definitions.
+diff --git a/include/lib/cpus/aarch64/cortex_a53.h b/include/lib/cpus/aarch64/cortex_a53.h
+index 18796eea3..0b73d9ded 100644
+--- a/include/lib/cpus/aarch64/cortex_a53.h
++++ b/include/lib/cpus/aarch64/cortex_a53.h
+@@ -13,13 +13,27 @@
+ #define CORTEX_A53_MIDR			U(0x410FD030)
+ 
+ /* Retention timer tick definitions */
++#ifndef RETENTION_ENTRY_TICKS_2
+ #define RETENTION_ENTRY_TICKS_2		U(0x1)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_8
+ #define RETENTION_ENTRY_TICKS_8		U(0x2)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_32
+ #define RETENTION_ENTRY_TICKS_32	U(0x3)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_64
+ #define RETENTION_ENTRY_TICKS_64	U(0x4)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_128
+ #define RETENTION_ENTRY_TICKS_128	U(0x5)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_256
+ #define RETENTION_ENTRY_TICKS_256	U(0x6)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_512
+ #define RETENTION_ENTRY_TICKS_512	U(0x7)
++#endif
+ 
+ /*******************************************************************************
+  * CPU Extended Control register specific definitions.
+diff --git a/include/lib/cpus/aarch64/cortex_a57.h b/include/lib/cpus/aarch64/cortex_a57.h
+index 19ac513db..33c66d87d 100644
+--- a/include/lib/cpus/aarch64/cortex_a57.h
++++ b/include/lib/cpus/aarch64/cortex_a57.h
+@@ -14,13 +14,27 @@
+ #define CORTEX_A57_MIDR			U(0x410FD070)
+ 
+ /* Retention timer tick definitions */
++#ifndef RETENTION_ENTRY_TICKS_2
+ #define RETENTION_ENTRY_TICKS_2		U(0x1)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_8
+ #define RETENTION_ENTRY_TICKS_8		U(0x2)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_32
+ #define RETENTION_ENTRY_TICKS_32	U(0x3)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_64
+ #define RETENTION_ENTRY_TICKS_64	U(0x4)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_128
+ #define RETENTION_ENTRY_TICKS_128	U(0x5)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_256
+ #define RETENTION_ENTRY_TICKS_256	U(0x6)
++#endif
++#ifndef RETENTION_ENTRY_TICKS_512
+ #define RETENTION_ENTRY_TICKS_512	U(0x7)
++#endif
+ 
+ /*******************************************************************************
+  * CPU Extended Control register specific definitions.
+-- 
+2.56.0
+
